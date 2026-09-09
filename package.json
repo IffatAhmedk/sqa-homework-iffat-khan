@@ -1,0 +1,21 @@
+{
+  "name": "sqa-homework-iffat-khan",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report artifacts/report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IffatAhmedk/sqa-homework-iffat-khan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IffatAhmedk/sqa-homework-iffat-khan/issues"
+  },
+  "homepage": "https://github.com/IffatAhmedk/sqa-homework-iffat-khan#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.5.0",
+    "typescript": "^7.0.2"
+  }
+}
