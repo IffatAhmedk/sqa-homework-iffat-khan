@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { chatInput, openChat, pill, sendButton } from './helpers/chat';
+import { ask, chatInput, openChat, pill, sendButton } from './helpers/chat';
 
 test('The page loads with the suggested-topic pills visible', async ({ page }) => {
   const suggestions = await openChat(page);
@@ -10,4 +10,12 @@ test('The page loads with the suggested-topic pills visible', async ({ page }) =
   }
   await expect(chatInput(page)).toBeVisible();
   await expect(sendButton(page), 'Send button is disabled until there is text').toBeDisabled();
+});
+
+test('Clicking a suggested topic produces an agent response', async ({ page }) => {
+  const [firstTopic] = await openChat(page);
+
+  const { sentMessage } = await ask(page, () => pill(page, firstTopic.title).click());
+
+  expect(sentMessage, 'POST payload carries the topic prompt').toBe(firstTopic.prompt);
 });
