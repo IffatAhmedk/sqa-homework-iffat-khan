@@ -1,5 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 import { ASK_ENDPOINT, SUGGESTIONS_ENDPOINT } from '../apis/chat-apis';
+import { seedConsentCookie } from './site';
 
 // JSON object skeleton from the suggestions API
 // pill displays the title; clicking the pill it sends prompt to the API
@@ -17,14 +18,7 @@ export const pill = (page: Page, title: string) =>
   page.getByRole('button', { name: title, exact: true });
 
 export async function openChat(page: Page): Promise<Suggestion[]> {
-  await page.context().addCookies([
-    {
-      name: 'OptanonAlertBoxClosed',
-      value: new Date().toISOString(),
-      domain: 'ask.permission.ai',
-      path: '/',
-    },
-  ]);
+  await seedConsentCookie(page);
 
 // first visit auto-sends a greeting and hides the pills
 // reload lands us in the returning-visitor state where they render the pills
