@@ -14,6 +14,7 @@ export interface Suggestion {
 
 export const chatInput = (page: Page) => page.getByTestId('agent-chat-input');
 export const sendButton = (page: Page) => page.getByTestId('agent-chat-input-send-button');
+export const stopButton = (page: Page) => page.getByTestId('agent-chat-input-stop-button');
 export const pill = (page: Page, title: string) =>
   page.getByRole('button', { name: title, exact: true });
 
