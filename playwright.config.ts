@@ -10,7 +10,7 @@ export default defineConfig({
   workers: 3,
   reporter: [
     ['list'],
-    ['html', { outputFolder: 'artifacts/report', open: 'never' }],
+    ['html', { outputFolder: 'artifacts/report', open: 'always' }],
   ],
   use: {
     baseURL: 'https://ask.permission.ai',
