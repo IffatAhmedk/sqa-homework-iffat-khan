@@ -13,7 +13,7 @@ npm test
 For the Part 2 LLM rubric:
 
 ```bash
-export GEMINI_API_KEY=...   # or OPENAI_API_KEY / ANTHROPIC_API_KEY
+export GEMINI_API_KEY=...  
 npm test
 ```
 
