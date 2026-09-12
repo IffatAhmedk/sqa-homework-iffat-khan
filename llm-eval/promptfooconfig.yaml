@@ -1,0 +1,51 @@
+# Grade the actual question and answer captured by the browser test.
+# Each assertion has its own value and named metric; all must pass.
+# No product-factuality check is claimed without a verified product reference.
+prompts:
+  - "{{answer}}"
+providers:
+  - echo
+# llm-rubric assertions grade with OpenAI by default regardless of which key
+# is set — this override is what actually routes grading to Gemini's free
+# tier. Swap back to omit this (or point it elsewhere) if a different grader
+# is preferred later.
+defaultTest:
+  options:
+    provider: google:gemini-flash-latest
+tests:
+  - description: Passive earning explanation
+    vars:
+      question: file://output/question.txt
+      answer: file://output/answer.txt
+      topic_expectation: >-
+        Explains earning with little ongoing effort after initial setup or
+        consent. Accept any wording and optional examples. Do not require
+        the words passive, ASK, data sharing, or browser extension. Reject
+        an answer that presents repeatedly completing surveys or tasks as
+        the definition of passive earning. A comparison with active earning
+        is acceptable.
+    assert:
+      - type: llm-rubric
+        metric: relevance
+        value: >-
+          Question: {{question}}
+          Accept an answer that directly addresses this question, even if
+          brief or accompanied by relevant context. Reject an unrelated
+          answer or generic company introduction that never answers it.
+      - type: llm-rubric
+        metric: useful_answer
+        value: >-
+          Question: {{question}}
+          Accept a substantive explanation, including reasonable caveats,
+          uncertainty about details, and relevant troubleshooting advice.
+          Reject an answer consisting only of a refusal, error message,
+          expression of uncertainty, or request to try again. Mentioning
+          an error or a limitation within a useful answer is acceptable.
+      - type: llm-rubric
+        metric: topic_understanding
+        value: >-
+          Question: {{question}}
+          Assess the explanation using this expectation:
+          {{topic_expectation}}
+          Judge meaning rather than keyword presence. Do not demand details
+          beyond this expectation or infer undocumented product requirements.
