@@ -6,7 +6,7 @@
 
 Pre-login, the core agent experience is solid. Suggested pills, free-text, and the mobile send-button flow all return on-topic answers, and Enter vs. Shift+Enter behaves exactly as the UI says it should.
 
-The `/register` password checklist is also good — clear, live, and easy to understand.
+The `/register` password checklist is also good - clear, live, and easy to understand.
 
 Post-login, the main flow holds up too. Login works, follow-up questions work through both pills and free-text, in-response CTAs behave as expected, and ASK points accrue correctly.
 
