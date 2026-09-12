@@ -17,13 +17,26 @@ tests:
     vars:
       question: file://output/question.txt
       answer: file://output/answer.txt
+      # Calibrated against 7 real sampled answers (2026-09-12), not assumed.
+      # Invariant across all 7: ties earning to ASK via opting into browser-
+      # activity sharing through the Permission Agent extension; never
+      # frames it as active/repeated task completion. Variable even among
+      # clearly-good samples: reward cadence ("weekly" vs. naming a specific
+      # day vs. unstated), privacy framing ("anonymized" vs. "private" vs.
+      # neither), whether opt-out is mentioned (absent in over half the
+      # sample), whether a closing question is present, and whether the
+      # literal word "extension" appears at all. None of those are required.
       topic_expectation: >-
         Explains earning with little ongoing effort after initial setup or
-        consent. Accept any wording and optional examples. Do not require
-        the words passive, ASK, data sharing, or browser extension. Reject
-        an answer that presents repeatedly completing surveys or tasks as
-        the definition of passive earning. A comparison with active earning
-        is acceptable.
+        consent, via opting into browser-activity sharing through the
+        Permission Agent (extension or otherwise). Accept any wording and
+        optional examples. Do not require the words passive, ASK, data
+        sharing, or browser extension. Do not require a specific reward
+        cadence, a stated privacy mechanism, a mention of opting out, or a
+        closing question — real answers vary on all of these. Reject an
+        answer that presents repeatedly completing surveys or tasks as the
+        definition of passive earning. A comparison with active earning is
+        acceptable.
     assert:
       - type: llm-rubric
         metric: relevance
