@@ -1,0 +1,414 @@
+{
+  "evalId": "eval-we2-2026-09-13T12:00:56",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-09-13T12:00:56.811Z",
+    "prompts": [
+      {
+        "id": "557aa7663dd953f3e4ca594ef26122f301f7dba28ca413f5a7d7ce3258bd5e94",
+        "raw": "{{answer}}",
+        "label": "{{answer}}",
+        "provider": "echo",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 3,
+          "assertFailCount": 0,
+          "totalLatencyMs": 1,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 2077,
+              "prompt": 971,
+              "completion": 202,
+              "cached": 0,
+              "numRequests": 3,
+              "completionDetails": {
+                "reasoning": 904,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "relevance": 1,
+            "useful_answer": 1,
+            "topic_understanding": 1
+          },
+          "namedScoresCount": {
+            "relevance": 1,
+            "useful_answer": 1,
+            "topic_understanding": 1
+          },
+          "namedScoreWeights": {
+            "relevance": 1,
+            "useful_answer": 1,
+            "topic_understanding": 1
+          },
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "relevance": 1,
+            "useful_answer": 1,
+            "topic_understanding": 1
+          },
+          "namedScoreWeights": {
+            "relevance": 1,
+            "useful_answer": 1,
+            "topic_understanding": 1
+          },
+          "tokensUsed": {
+            "total": 2077,
+            "prompt": 971,
+            "completion": 202,
+            "cached": 0,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 904,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "metric": "relevance",
+                "value": "Question: {{question}} Accept an answer that directly addresses this question, even if brief or accompanied by relevant context. Reject an unrelated answer or generic company introduction that never answers it."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The output directly explains what passive earning is (earning weekly ASK rewards by opting into data sharing through the Permission Agent browser extension) along with relevant context about how it works.",
+              "tokensUsed": {
+                "total": 617,
+                "prompt": 281,
+                "completion": 65,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 271,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nPassive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.\\n</Output>\\n<Rubric>\\nQuestion: What is passive earning? Accept an answer that directly addresses this question, even if brief or accompanied by relevant context. Reject an unrelated answer or generic company introduction that never answers it.\\n</Rubric>\"}]",
+                "renderedAssertionValue": "Question: What is passive earning? Accept an answer that directly addresses this question, even if brief or accompanied by relevant context. Reject an unrelated answer or generic company introduction that never answers it."
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "metric": "useful_answer",
+                "value": "Question: {{question}} Accept a substantive explanation, including reasonable caveats, uncertainty about details, and relevant troubleshooting advice. Reject an answer consisting only of a refusal, error message, expression of uncertainty, or request to try again. Mentioning an error or a limitation within a useful answer is acceptable."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The output provides a substantive explanation of passive earning, explaining that it involves earning weekly ASK rewards by opting into data sharing through the Permission Agent browser extension, detailing what is tracked, and how to manage the feature.",
+              "tokensUsed": {
+                "total": 646,
+                "prompt": 304,
+                "completion": 72,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 270,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nPassive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.\\n</Output>\\n<Rubric>\\nQuestion: What is passive earning? Accept a substantive explanation, including reasonable caveats, uncertainty about details, and relevant troubleshooting advice. Reject an answer consisting only of a refusal, error message, expression of uncertainty, or request to try again. Mentioning an error or a limitation within a useful answer is acceptable.\\n</Rubric>\"}]",
+                "renderedAssertionValue": "Question: What is passive earning? Accept a substantive explanation, including reasonable caveats, uncertainty about details, and relevant troubleshooting advice. Reject an answer consisting only of a refusal, error message, expression of uncertainty, or request to try again. Mentioning an error or a limitation within a useful answer is acceptable."
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "metric": "topic_understanding",
+                "value": "Question: {{question}} Assess the explanation using this expectation: {{topic_expectation}} Judge meaning rather than keyword presence. Do not demand details beyond this expectation or infer undocumented product requirements."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The output clearly explains passive earning as earning rewards by opting into browser-activity sharing through the Permission Agent browser extension, which requires little ongoing effort after the initial opt-in.",
+              "tokensUsed": {
+                "total": 814,
+                "prompt": 386,
+                "completion": 65,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 363,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nPassive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.\\n</Output>\\n<Rubric>\\nQuestion: What is passive earning? Assess the explanation using this expectation: Explains earning with little ongoing effort after initial setup or consent, via opting into browser-activity sharing through the Permission Agent (extension or otherwise). Accept any wording and optional examples. Do not require the words passive, ASK, data sharing, or browser extension. Do not require a specific reward cadence, a stated privacy mechanism, a mention of opting out, or a closing question — real answers vary on all of these. Reject an answer that presents repeatedly completing surveys or tasks as the definition of passive earning. A comparison with active earning is acceptable. Judge meaning rather than keyword presence. Do not demand details beyond this expectation or infer undocumented product requirements.\\n</Rubric>\"}]",
+                "renderedAssertionValue": "Question: What is passive earning? Assess the explanation using this expectation: Explains earning with little ongoing effort after initial setup or consent, via opting into browser-activity sharing through the Permission Agent (extension or otherwise). Accept any wording and optional examples. Do not require the words passive, ASK, data sharing, or browser extension. Do not require a specific reward cadence, a stated privacy mechanism, a mention of opting out, or a closing question — real answers vary on all of these. Reject an answer that presents repeatedly completing surveys or tasks as the definition of passive earning. A comparison with active earning is acceptable. Judge meaning rather than keyword presence. Do not demand details beyond this expectation or infer undocumented product requirements."
+              }
+            }
+          ]
+        },
+        "id": "f47a224e-3782-4a6f-aba7-f9a50640f687",
+        "latencyMs": 1,
+        "namedScores": {
+          "relevance": 1,
+          "useful_answer": 1,
+          "topic_understanding": 1
+        },
+        "prompt": {
+          "raw": "Passive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.",
+          "label": "{{answer}}",
+          "config": {
+            "provider": "google:gemini-3.5-flash"
+          }
+        },
+        "promptId": "557aa7663dd953f3e4ca594ef26122f301f7dba28ca413f5a7d7ce3258bd5e94",
+        "promptIdx": 0,
+        "provider": {
+          "id": "echo",
+          "label": ""
+        },
+        "response": {
+          "output": "Passive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.",
+          "raw": "Passive earning lets you earn weekly ASK rewards by opting into data sharing through the Permission Agent browser extension. Your browser activity, like site visits and shopping behaviors, is tracked anonymously to personalize your experience and unlock relevant offers. You are rewarded weekly for your participation. You can enable or disable this feature in your extension settings.",
+          "cost": 0,
+          "cached": false,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "isRefusal": false,
+          "metadata": {}
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Passive earning explanation",
+          "vars": {
+            "question": "file://output/question.txt",
+            "answer": "file://output/answer.txt",
+            "topic_expectation": "Explains earning with little ongoing effort after initial setup or consent, via opting into browser-activity sharing through the Permission Agent (extension or otherwise). Accept any wording and optional examples. Do not require the words passive, ASK, data sharing, or browser extension. Do not require a specific reward cadence, a stated privacy mechanism, a mention of opting out, or a closing question — real answers vary on all of these. Reject an answer that presents repeatedly completing surveys or tasks as the definition of passive earning. A comparison with active earning is acceptable."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "metric": "relevance",
+              "value": "Question: {{question}} Accept an answer that directly addresses this question, even if brief or accompanied by relevant context. Reject an unrelated answer or generic company introduction that never answers it."
+            },
+            {
+              "type": "llm-rubric",
+              "metric": "useful_answer",
+              "value": "Question: {{question}} Accept a substantive explanation, including reasonable caveats, uncertainty about details, and relevant troubleshooting advice. Reject an answer consisting only of a refusal, error message, expression of uncertainty, or request to try again. Mentioning an error or a limitation within a useful answer is acceptable."
+            },
+            {
+              "type": "llm-rubric",
+              "metric": "topic_understanding",
+              "value": "Question: {{question}} Assess the explanation using this expectation: {{topic_expectation}} Judge meaning rather than keyword presence. Do not demand details beyond this expectation or infer undocumented product requirements."
+            }
+          ],
+          "options": {
+            "provider": "google:gemini-3.5-flash"
+          },
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 2077,
+            "prompt": 971,
+            "completion": 202,
+            "cached": 0,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 904,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "file://output/question.txt",
+          "answer": "file://output/answer.txt",
+          "topic_expectation": "Explains earning with little ongoing effort after initial setup or consent, via opting into browser-activity sharing through the Permission Agent (extension or otherwise). Accept any wording and optional examples. Do not require the words passive, ASK, data sharing, or browser extension. Do not require a specific reward cadence, a stated privacy mechanism, a mention of opting out, or a closing question — real answers vary on all of these. Reject an answer that presents repeatedly completing surveys or tasks as the definition of passive earning. A comparison with active earning is acceptable."
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 2077,
+          "prompt": 971,
+          "completion": 202,
+          "cached": 0,
+          "numRequests": 3,
+          "completionDetails": {
+            "reasoning": 904,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 10290,
+      "evaluationDurationMs": 10290
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "{{answer}}"
+    ],
+    "providers": [
+      "echo"
+    ],
+    "tests": [
+      {
+        "description": "Passive earning explanation",
+        "vars": {
+          "question": "file://output/question.txt",
+          "answer": "file://output/answer.txt",
+          "topic_expectation": "Explains earning with little ongoing effort after initial setup or consent, via opting into browser-activity sharing through the Permission Agent (extension or otherwise). Accept any wording and optional examples. Do not require the words passive, ASK, data sharing, or browser extension. Do not require a specific reward cadence, a stated privacy mechanism, a mention of opting out, or a closing question — real answers vary on all of these. Reject an answer that presents repeatedly completing surveys or tasks as the definition of passive earning. A comparison with active earning is acceptable."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "metric": "relevance",
+            "value": "Question: {{question}} Accept an answer that directly addresses this question, even if brief or accompanied by relevant context. Reject an unrelated answer or generic company introduction that never answers it."
+          },
+          {
+            "type": "llm-rubric",
+            "metric": "useful_answer",
+            "value": "Question: {{question}} Accept a substantive explanation, including reasonable caveats, uncertainty about details, and relevant troubleshooting advice. Reject an answer consisting only of a refusal, error message, expression of uncertainty, or request to try again. Mentioning an error or a limitation within a useful answer is acceptable."
+          },
+          {
+            "type": "llm-rubric",
+            "metric": "topic_understanding",
+            "value": "Question: {{question}} Assess the explanation using this expectation: {{topic_expectation}} Judge meaning rather than keyword presence. Do not demand details beyond this expectation or infer undocumented product requirements."
+          }
+        ]
+      }
+    ],
+    "env": {},
+    "defaultTest": {
+      "options": {
+        "provider": "google:gemini-3.5-flash"
+      },
+      "vars": {},
+      "assert": [],
+      "metadata": {}
+    },
+    "outputPath": [
+      "/Users/iffatahmedkhan/Personal/sqa-homework-iffat-khan/llm-eval/output/result.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {}
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.123.0",
+    "nodeVersion": "v23.11.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "exportedAt": "2026-09-13T12:01:07.131Z",
+    "evaluationCreatedAt": "2026-09-13T12:00:56.811Z"
+  },
+  "vars": [
+    "question",
+    "answer",
+    "topic_expectation"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": false,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": false
+  }
+}
