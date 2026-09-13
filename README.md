@@ -47,8 +47,6 @@ Waiting is based on network and render state throughout, never fixed sleeps.
 
 * For Part 2, deterministic assertions still do the basic gating, while Promptfoo handles the semantic part that normal assertions can't.
 
-* Exploratory findings live under `notes/`, separate from the graded `artifacts/`, so they don't get mixed into the UX deliverable.
-
 # AI disclosure
 
 See [artifacts/ai-workflow.md](artifacts/ai-workflow.md).
